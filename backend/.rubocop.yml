@@ -1,6 +1,18 @@
 # Omakase Ruby styling for Rails
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
+# Exclude test directories and generated files from linting
+AllCops:
+  Exclude:
+    - "spec/**/*"
+    - "features/**/*"
+    - "test/**/*"
+    - "lib/tasks/cucumber.rake"
+    - "bin/**/*"
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+
 # Overwrite or add rules to create your own house style
 #
 # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
